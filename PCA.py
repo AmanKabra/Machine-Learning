@@ -39,14 +39,24 @@ from sklearn.linear_model import LogisticRegression
 # default solver is incredibly slow which is why it was changed to 'lbfgs'
 logisticRegr = LogisticRegression(solver = 'lbfgs')
 
-!git init
+logisticRegr.fit(train_img, train_lbl)
 
-!git stage
+# Predict for One Observation (image)
+logisticRegr.predict(test_img[0].reshape(1,-1))
+
+# Predict for One Observation (image)
+logisticRegr.predict(test_img[0:10])
+
+logisticRegr.score(test_img, test_lbl)
 
 
+!git stage PCA.py
 
+!git commit -m "Second commit"
 
+!git remote set-url origin https://github.com/AmanKabra/Machine-Learning.git
 
+!git push -u origin master
 
 
 
